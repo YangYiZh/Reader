@@ -1,0 +1,39 @@
+name: Flutter Android Build
+
+on:
+  push:
+    branches:
+      - main  # 当推送到 main 分支时触发
+  pull_request:
+    branches:
+      - main  # 当有针对 main 分支的 PR 时触发
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    # 检出代码
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    # 设置 Flutter 环境
+    - name: Setup Flutter
+      uses: subosito/flutter-action@v2
+      with:
+        flutter-version: 'stable'
+
+    # 安装依赖
+    - name: Install dependencies
+      run: flutter pub get
+
+    # 构建 Release APK
+    - name: Build APK
+      run: flutter build apk --release
+
+    # 上传构建的 APK 文件
+    - name: Upload APK
+      uses: actions/upload-artifact@v3
+      with:
+        name: app-release.apk
+        path: build/app/outputs/flutter-apk/app-release.apk
