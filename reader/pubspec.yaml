@@ -1,0 +1,48 @@
+name: reader
+description: 一个简洁的安卓电子书阅读器
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+  flutter: ">=3.19.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+  # 状态管理
+  flutter_riverpod: ^2.4.9
+  # 本地存储
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+  # 文件选择
+  file_picker: ^6.1.1
+  # 电子书格式支持
+  epubx: ^0.1.0
+  pdfx: ^2.0.0
+  # 页面动画
+  page_animation: ^1.0.0
+  # 主题管理
+  shared_preferences: ^2.2.2
+  # 工具类
+  path_provider: ^2.1.2
+  permission_handler: ^11.1.0
+  # 网络请求
+  dio: ^5.4.0
+  # 编码检测
+  charset: ^2.0.1
+  # 进度显示
+  percent_indicator: ^4.2.3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+  build_runner: ^2.4.8
+  hive_generator: ^2.0.1
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
+    - assets/fonts/ 
